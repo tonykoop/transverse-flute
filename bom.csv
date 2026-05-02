@@ -1,0 +1,9 @@
+item_id,subsystem,item,qty,unit,material_spec,make_buy,drawing_ref,notes
+SCF-BOM-001,CAD/master,Parametric flute body master set,5,masters,"Sealed 3D print or machined master, scaled by X/Y/Z shrink factors",Make,drawings/SCF-*-body.svg; cad/slip_cast_transverse_flute_body.scad,Use as mold masters or CAD reference. Add mold split before production tooling.
+SCF-BOM-002,Mold,Two-piece or three-piece plaster molds,5+,molds,"Pottery plaster, registration keys, pour/drain reservoir",Make,drawings/mold-stack.svg,D4 may need sectional mold or reinforced cradle due to length.
+SCF-BOM-003,Material,Cone 6 stoneware casting slip,TBD,gallons,Casting slip with known fired shrinkage and absorption,Buy/mix,data/doe-build-matrix.csv,Date-check supplier and record batch number.
+SCF-BOM-004,Material,Cone 6 porcelain casting slip,TBD,gallons,Porcelain slip for comparison runs,Buy/mix,data/doe-build-matrix.csv,"Higher shrink/warpage risk, better density and surface."
+SCF-BOM-005,Tuning,Diamond needle files and small diamond burrs,1,set,Fine files for bisque and fired ceramic hole tuning,Buy,assembly-manual.md,Avoid glazing acoustic edges after tuning.
+SCF-BOM-006,Validation,Measurement kit,1,kit,"Calipers, bore gauges/pin gauges, tuner, mic, thermometer/hygrometer, scale",Use/buy,validation.csv,Use the same tuner/mic distance for all response tests.
+SCF-BOM-007,Voicing,Cork/stopper test kit,5,sets,"Cork, silicone, or printed plug for head-end tuning experiments",Make/buy,drawing-brief.md,Treat head-stopper position as an adjustable variable before ceramic-integral solutions.
+SCF-BOM-008,Finish,Wax resist and glaze test set,1,set,Food-safe/contact-safe glaze where mouth contact occurs; acoustic edges waxed clear,Buy,mold-workflow.md,"Keep glaze out of embouchure, bore, tone holes, and stopper fit surfaces."

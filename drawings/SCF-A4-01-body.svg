@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="830" height="330" viewBox="0 0 830 330">
+<style>text{font-family:Arial,sans-serif;font-size:12px;fill:#102030}.small{font-size:10px}.line{stroke:#102030;stroke-width:1.2;fill:none}.dim{stroke:#446;stroke-width:1;marker-start:url(#a);marker-end:url(#a)}.body{fill:#f7f4ee;stroke:#102030;stroke-width:1.5}.hole{fill:#ffffff;stroke:#102030;stroke-width:1.2}</style>
+<defs><marker id="a" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto"><path d="M0,3 L6,0 L6,6 Z" fill="#446"/></marker></defs>
+<text x="70" y="34" style="font-size:18px;font-weight:bold">SCF-A4-01 Slip-Cast Transverse Flute - Fired Target Drawing</text>
+<text x="70" y="54">Key A4; bore ID 0.591 in; OD 0.841 in; pre-trim fired length 16.432 in; initial master X 18.673 in at 12% shrink</text>
+<rect class="body" x="70.0" y="120.0" width="690.1" height="35.3" rx="17.7"/>
+<line class="line" x1="70.0" y1="137.7" x2="760.1" y2="137.7" stroke-dasharray="5 5"/>
+<ellipse class="hole" cx="107.2" cy="137.7" rx="7.8" ry="6.5"/>
+<text class="small" x="77.2" y="108.0">Emb</text>
+<circle class="hole" cx="162.9" cy="137.7" r="4.2"/>
+<text class="small" x="152.9" y="183.3">H1</text>
+<text class="small" x="146.9" y="197.3">B4</text>
+<circle class="hole" cx="225.8" cy="137.7" r="4.5"/>
+<text class="small" x="215.8" y="183.3">H2</text>
+<text class="small" x="209.8" y="197.3">Db5</text>
+<circle class="hole" cx="254.6" cy="137.7" r="4.7"/>
+<text class="small" x="244.6" y="183.3">H3</text>
+<text class="small" x="238.6" y="197.3">D5</text>
+<circle class="hole" cx="307.5" cy="137.7" r="5.0"/>
+<text class="small" x="297.5" y="183.3">H4</text>
+<text class="small" x="291.5" y="197.3">E5</text>
+<circle class="hole" cx="354.6" cy="137.7" r="5.3"/>
+<text class="small" x="344.6" y="183.3">H5</text>
+<text class="small" x="338.6" y="197.3">Gb5</text>
+<circle class="hole" cx="396.5" cy="137.7" r="5.7"/>
+<text class="small" x="386.5" y="183.3">H6</text>
+<text class="small" x="380.5" y="197.3">Ab5</text>
+<line class="dim" x1="70.0" y1="230.3" x2="760.1" y2="230.3"/>
+<line class="line" x1="70.0" y1="155.3" x2="70.0" y2="238.3"/>
+<line class="line" x1="760.1" y1="155.3" x2="760.1" y2="238.3"/>
+<text x="345.1" y="252.3">Pre-trim fired length 16.432 in</text>
+<text class="small" x="70" y="284">Datums: X0=head end, X+ toward foot; centerline through bore. Tone-hole stations are first-pass acoustic targets and should be cut undersize, then tuned after bisque.</text>
+<text class="small" x="70" y="302">Shrink model: master_x=fired_x/(1-sx), master_y=fired_y/(1-sy), master_z=fired_z/(1-sz). Initial sx=sy=sz=12%; replace with measured Round 1 data.</text>
+</svg>

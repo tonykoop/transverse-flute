@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1250" height="570" viewBox="0 0 1250 570">
+<style>text{font-family:Arial,sans-serif;font-size:12px;fill:#102030}.title{font-size:22px;font-weight:bold}.body{fill:#f7f4ee;stroke:#102030;stroke-width:1.4}.hole{fill:#fff;stroke:#102030;stroke-width:1}.axis{stroke:#607080;stroke-width:1;stroke-dasharray:5 5}</style>
+<text class="title" x="40" y="40">Slip-Cast Transverse Flute Family - Fired Target Lengths</text>
+<text x="40" y="63">Generated 2026-05-02. Dimensions are final fired targets; master dimensions use X/Y/Z shrink factors and are listed in the workbook/data tables.</text>
+<text x="40" y="142.0" style="font-weight:bold">SCF-D4-01</text>
+<text x="40" y="159.0">D4, 24.25 in fired</text>
+<rect class="body" x="180.0" y="125.2" width="980.0" height="41.5" rx="20.8"/>
+<line class="axis" x1="180.0" y1="146.0" x2="1160.0" y2="146.0"/>
+<ellipse class="hole" cx="225.3" cy="146.0" rx="9.5" ry="7.9"/>
+<circle class="hole" cx="309.0" cy="146.0" r="5.1"/>
+<circle class="hole" cx="399.6" cy="146.0" r="5.4"/>
+<circle class="hole" cx="441.1" cy="146.0" r="5.7"/>
+<circle class="hole" cx="517.4" cy="146.0" r="6.0"/>
+<circle class="hole" cx="585.3" cy="146.0" r="6.5"/>
+<circle class="hole" cx="645.8" cy="146.0" r="7.0"/>
+<text x="1178.0" y="142.0">bore 0.748 in</text>
+<text x="1178.0" y="159.0">master X 27.55 in @12%</text>
+<text x="40" y="234.0" style="font-weight:bold">SCF-F4-01</text>
+<text x="40" y="251.0">F4, 20.50 in fired</text>
+<rect class="body" x="180.0" y="219.0" width="828.7" height="38.0" rx="19.0"/>
+<line class="axis" x1="180.0" y1="238.0" x2="1008.7" y2="238.0"/>
+<ellipse class="hole" cx="220.6" cy="238.0" rx="8.5" ry="7.0"/>
+<circle class="hole" cx="289.9" cy="238.0" r="4.6"/>
+<circle class="hole" cx="366.1" cy="238.0" r="4.9"/>
+<circle class="hole" cx="401.1" cy="238.0" r="5.1"/>
+<circle class="hole" cx="465.1" cy="238.0" r="5.4"/>
+<circle class="hole" cx="522.2" cy="238.0" r="5.8"/>
+<circle class="hole" cx="573.1" cy="238.0" r="6.2"/>
+<text x="1026.7" y="234.0">bore 0.669 in</text>
+<text x="1026.7" y="251.0">master X 23.30 in @12%</text>
+<text x="40" y="326.0" style="font-weight:bold">SCF-G4-01</text>
+<text x="40" y="343.0">G4, 18.39 in fired</text>
+<rect class="body" x="180.0" y="311.2" width="743.2" height="37.5" rx="18.8"/>
+<line class="axis" x1="180.0" y1="330.0" x2="923.2" y2="330.0"/>
+<ellipse class="hole" cx="220.6" cy="330.0" rx="8.5" ry="7.0"/>
+<circle class="hole" cx="280.6" cy="330.0" r="4.6"/>
+<circle class="hole" cx="348.5" cy="330.0" r="4.9"/>
+<circle class="hole" cx="379.6" cy="330.0" r="5.1"/>
+<circle class="hole" cx="436.7" cy="330.0" r="5.4"/>
+<circle class="hole" cx="487.6" cy="330.0" r="5.8"/>
+<circle class="hole" cx="532.9" cy="330.0" r="6.2"/>
+<text x="941.2" y="326.0">bore 0.669 in</text>
+<text x="941.2" y="343.0">master X 20.90 in @12%</text>
+<text x="40" y="418.0" style="font-weight:bold">SCF-A4-01</text>
+<text x="40" y="435.0">A4, 16.43 in fired</text>
+<rect class="body" x="180.0" y="405.0" width="664.1" height="34.0" rx="17.0"/>
+<line class="axis" x1="180.0" y1="422.0" x2="844.1" y2="422.0"/>
+<ellipse class="hole" cx="215.8" cy="422.0" rx="7.5" ry="6.2"/>
+<circle class="hole" cx="269.4" cy="422.0" r="4.1"/>
+<circle class="hole" cx="329.9" cy="422.0" r="4.3"/>
+<circle class="hole" cx="357.6" cy="422.0" r="4.5"/>
+<circle class="hole" cx="408.5" cy="422.0" r="4.8"/>
+<circle class="hole" cx="453.8" cy="422.0" r="5.1"/>
+<circle class="hole" cx="494.2" cy="422.0" r="5.5"/>
+<text x="862.1" y="418.0">bore 0.591 in</text>
+<text x="862.1" y="435.0">master X 18.67 in @12%</text>
+<text x="40" y="510.0" style="font-weight:bold">SCF-C5-01</text>
+<text x="40" y="527.0">C5, 13.91 in fired</text>
+<rect class="body" x="180.0" y="499.0" width="562.2" height="30.0" rx="15.0"/>
+<line class="axis" x1="180.0" y1="514.0" x2="742.2" y2="514.0"/>
+<ellipse class="hole" cx="211.0" cy="514.0" rx="6.5" ry="5.4"/>
+<circle class="hole" cx="255.7" cy="514.0" r="3.5"/>
+<circle class="hole" cx="306.6" cy="514.0" r="3.7"/>
+<circle class="hole" cx="329.9" cy="514.0" r="3.9"/>
+<circle class="hole" cx="372.7" cy="514.0" r="4.1"/>
+<circle class="hole" cx="410.8" cy="514.0" r="4.4"/>
+<circle class="hole" cx="444.8" cy="514.0" r="4.8"/>
+<text x="760.2" y="510.0">bore 0.512 in</text>
+<text x="760.2" y="527.0">master X 15.81 in @12%</text>
+</svg>

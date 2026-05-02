@@ -1,0 +1,2 @@
+build_id,instrument_id,material_batch,mold_id,axis,feature,master_target_in,master_measured_in,wet_green_measured_in,bone_dry_measured_in,bisque_measured_in,glaze_measured_in,observed_total_shrink,round2_scale_multiplier,target_frequency_hz,measured_frequency_hz,cents_error,notes
+SCF-R1-01-A,SCF-D4-01,,,X,overall_length,,,,,,,"=IF(OR(H2="""",L2=""""),"""",1-L2/H2)","=IF(OR(G2="""",L2=""""),"""",G2/L2)",,,"=IF(OR(O2="""",P2=""""),"""",1200*LOG(P2/O2,2))",Duplicate rows for each feature/axis/note.

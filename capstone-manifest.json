@@ -1,0 +1,30 @@
+{
+  "packet_dir": "/mnt/c/Users/Tony/Documents/GitHub/transverse-flute",
+  "title": "Slip-Cast Transverse Flute Family",
+  "generated": "2026-05-02",
+  "files_included": [
+    "design.md",
+    "bom.csv",
+    "sourcing.csv",
+    "cut-list.csv",
+    "drawing-brief.md",
+    "assembly-manual.md",
+    "validation.csv",
+    "supplier-rfq.md",
+    "visual-bom-brief.md",
+    "wolfram-starter.wl",
+    "README.md",
+    "doe-plan.md",
+    "mold-workflow.md"
+  ],
+  "outputs": {
+    "capstone_deck_markdown": "/mnt/c/Users/Tony/Documents/GitHub/transverse-flute/capstone-deck.md",
+    "capstone_deck_pptx": null,
+    "print_packet_markdown": "/mnt/c/Users/Tony/Documents/GitHub/transverse-flute/print-packet.md",
+    "print_packet_html": "/mnt/c/Users/Tony/Documents/GitHub/transverse-flute/print-packet.html"
+  },
+  "notes": [
+    "PPTX is created only when python-pptx is installed in the active Python environment.",
+    "Use the HTML file for browser print-to-PDF when direct PDF tooling is unavailable."
+  ]
+}

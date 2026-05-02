@@ -1,0 +1,568 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Slip-Cast Transverse Flute Family</title><style>
+body { font-family: Arial, sans-serif; color: #111; line-height: 1.35; max-width: 900px; margin: 32px auto; }
+h1 { font-size: 28px; border-bottom: 2px solid #222; padding-bottom: 6px; }
+h2 { font-size: 22px; margin-top: 28px; }
+h3 { font-size: 18px; }
+table { border-collapse: collapse; width: 100%; margin: 12px 0 20px; font-size: 12px; }
+th, td { border: 1px solid #888; padding: 6px; vertical-align: top; }
+th { background: #e8eef8; }
+pre { white-space: pre-wrap; background: #f5f5f5; padding: 10px; border: 1px solid #ddd; }
+.page-break { page-break-before: always; break-before: page; }
+@media print { body { margin: 0.5in; max-width: none; } a { color: #111; } }
+</style></head><body>
+<h1>Slip-Cast Transverse Flute Family Print Packet</h1>
+
+<p>Generated: 2026-05-02</p>
+<p>Packet folder: `/mnt/c/Users/Tony/Documents/GitHub/transverse-flute`</p>
+
+<h2>File Map</h2>
+
+<table>
+<tr><th>File</th><th>Purpose</th></tr>
+<tr><td>`design.md`</td><td>Project intent, catalog metadata, assumptions, and validation plan.</td></tr>
+<tr><td>`bom.csv`</td><td>Starter bill of materials with part categories, quantities, drawing refs, and notes.</td></tr>
+<tr><td>`sourcing.csv`</td><td>Supplier/search tracker with specs, price/date fields, lead time, substitutes, and risks.</td></tr>
+<tr><td>`cut-list.csv`</td><td>Rough/final stock sizes, material, grain/orientation, operations, yield, and offcuts.</td></tr>
+<tr><td>`drawing-brief.md`</td><td>Manufacturing drawing and technical product sketch brief.</td></tr>
+<tr><td>`assembly-manual.md`</td><td>Shop-facing sequence, tools, fixtures, safety, tuning, finishing, and maintenance notes.</td></tr>
+<tr><td>`validation.csv`</td><td>Target/measured values, tolerance, environment, result, and tuning/build action log.</td></tr>
+<tr><td>`supplier-rfq.md`</td><td>Supplier email/request-for-quote starter.</td></tr>
+<tr><td>`visual-bom-brief.md`</td><td>Art direction for an image-forward visual BOM.</td></tr>
+<tr><td>`wolfram-starter.wl`</td><td>Wolfram starter for physics, optimization, visualization, and validation.</td></tr>
+<tr><td>`README.md`</td><td>Project artifact.</td></tr>
+<tr><td>`doe-plan.md`</td><td>Project artifact.</td></tr>
+<tr><td>`mold-workflow.md`</td><td>Project artifact.</td></tr>
+</table>
+
+<div class="page-break"></div>
+
+<h2>design.md</h2>
+
+<p>Project intent, catalog metadata, assumptions, and validation plan.</p>
+
+<h1>Slip-Cast Transverse Flute Family Build Packet</h1>
+
+<h2>Source And Scope</h2>
+
+<ul>
+<li>Date: `2026-05-02`</li>
+<li>Source workbook inspected: `/mnt/c/Users/Tony/Documents/Claude/Projects/Career/flutes-staging/Flutes-AI.xlsx`</li>
+<li>Relevant sheet: `Irish Flute`, which uses open-open flute math, D4 sanity dimensions, end correction, and 6-hole diatonic placement.</li>
+<li>Ceramic workflow references inspected: `Ocarina`, `Udu Drum Family`, and `vessel-flute-lab` build packets.</li>
+</ul>
+
+<p>This packet is for unkeyed transverse ceramic flute prototypes made by slip casting. The acoustic dimensions below are final fired targets. Master and mold dimensions are scaled from those targets using provisional X/Y/Z shrink factors.</p>
+
+<h2>Design Intent</h2>
+
+<p>Build a family across D4, F4, G4, A4, and C5 so the study sees both long-body casting behavior and smaller higher-key behavior. Round 1 is not trying to prove a finished product. It is meant to produce a clean data set:</p>
+
+<ul>
+<li>actual X/Y/Z fired shrink by material, wall, and mold orientation,</li>
+<li>actual bore roundness and wall buildup,</li>
+<li>pitch and response error against the open-open first-pass model,</li>
+<li>embouchure and bore-profile preferences before Round 2.</li>
+</ul>
+
+<h2>Governing Model</h2>
+
+<p>First-pass open-open transverse flute model:</p>
+
+<pre><code>
+f = c / (2 * L_eff)
+L_acoustic = c / (2 * f)
+end_correction_total ~= 0.6 * bore_ID
+sounding_length ~= L_acoustic - end_correction_total
+hole_distance_from_foot ~= L_acoustic * (fundamental_frequency / hole_frequency)
+</code></pre>
+
+<p>The hole positions are first-pass acoustic stations. Ceramic wall thickness, hole chimney height, undercutting, bore ovalization, embouchure geometry, and stopper position will move real pitch. The packet therefore makes hole cuts undersize and expects bisque-stage tuning.</p>
+
+<h2>Initial Family Targets</h2>
+
+<table>
+<tr><th>ID</th><th>Key</th><th>Bore ID</th><th>OD</th><th>Sounding length</th><th>Pre-trim fired length</th><th>Master X length @12%</th></tr>
+<tr><td>SCF-D4-01</td><td>D4</td><td>0.748 in</td><td>1.028 in</td><td>22.625 in</td><td>24.247 in</td><td>27.554 in</td></tr>
+<tr><td>SCF-F4-01</td><td>F4</td><td>0.669 in</td><td>0.939 in</td><td>19.001 in</td><td>20.505 in</td><td>23.301 in</td></tr>
+<tr><td>SCF-G4-01</td><td>G4</td><td>0.669 in</td><td>0.929 in</td><td>16.885 in</td><td>18.388 in</td><td>20.895 in</td></tr>
+<tr><td>SCF-A4-01</td><td>A4</td><td>0.591 in</td><td>0.841 in</td><td>15.045 in</td><td>16.432 in</td><td>18.673 in</td></tr>
+<tr><td>SCF-C5-01</td><td>C5</td><td>0.512 in</td><td>0.742 in</td><td>12.643 in</td><td>13.911 in</td><td>15.808 in</td></tr>
+</table>
+
+<h2>Shrinkage Model</h2>
+
+<p>Coordinate convention:</p>
+
+<ul>
+<li>X = flute length/bore axis/hole stations.</li>
+<li>Y = side-to-side bore and outside width.</li>
+<li>Z = vertical height, wall buildup, and ovalization direction.</li>
+</ul>
+
+<pre><code>
+master_x = fired_target_x / (1 - shrink_x)
+master_y = fired_target_y / (1 - shrink_y)
+master_z = fired_target_z / (1 - shrink_z)
+observed_shrink_axis = 1 - fired_measured_axis / master_measured_axis
+round2_master_axis = round1_master_axis * fired_target_axis / fired_measured_axis
+</code></pre>
+
+<p>Initial assumption is `shrink_x = shrink_y = shrink_z = 0.12`. This is a placeholder, not a material claim.</p>
+
+<h2>Round 1 Success Criteria</h2>
+
+<ul>
+<li>No full-length cracking through drying, bisque, or glaze fire.</li>
+<li>Bore remains measurable and cleanable.</li>
+<li>Embouchure speaks a stable fundamental and octave on at least the G4 or C5 prototypes.</li>
+<li>Hole tuning can be brought within +/-35 cents after bisque without grotesque hole enlargement.</li>
+<li>X/Y/Z shrink measurements have enough consistency to choose Round 2 scale factors.</li>
+</ul>
+
+<h2>Round 2 Decision Path</h2>
+
+<p>1. Fit shrink_x, shrink_y, and shrink_z from bars, bore rings, and flute features.</p>
+<p>2. Choose the best material/profile/embouchure combination from the DoE.</p>
+<p>3. Update the workbook inputs and regenerate master dimensions.</p>
+<p>4. Rebuild the full five-key family using corrected X/Y/Z scale factors.</p>
+<p>5. Tighten acceptance to +/-10 cents for tuned notes and +/-0.010 to +/-0.030 in on critical fired dimensions.</p>
+
+<h2>Open Assumptions</h2>
+
+<ul>
+<li>Bore diameters are adapted from the existing Irish/simple-system flute design range, then made ceramic-friendly with thinner walls than wood.</li>
+<li>A removable head stopper or cork test plug is assumed for Round 1 because it gives a reversible tuning variable.</li>
+<li>All prices, supplier availability, and exact clay data must be date-checked before buying.</li>
+<li>CAD mold release and split lines need confirmation in the actual CAD model before cutting production molds.</li>
+</ul>
+
+<div class="page-break"></div>
+
+<h2>bom.csv</h2>
+
+<p>Starter bill of materials with part categories, quantities, drawing refs, and notes.</p>
+
+<table>
+<tr><th>item_id</th><th>subsystem</th><th>item</th><th>qty</th><th>unit</th><th>material_spec</th><th>make_buy</th><th>drawing_ref</th><th>notes</th></tr>
+<tr><td>SCF-BOM-001</td><td>CAD/master</td><td>Parametric flute body master set</td><td>5</td><td>masters</td><td>Sealed 3D print or machined master, scaled by X/Y/Z shrink factors</td><td>Make</td><td>drawings/SCF-*-body.svg; cad/slip_cast_transverse_flute_body.scad</td><td>Use as mold masters or CAD reference. Add mold split before production tooling.</td></tr>
+<tr><td>SCF-BOM-002</td><td>Mold</td><td>Two-piece or three-piece plaster molds</td><td>5+</td><td>molds</td><td>Pottery plaster, registration keys, pour/drain reservoir</td><td>Make</td><td>drawings/mold-stack.svg</td><td>D4 may need sectional mold or reinforced cradle due to length.</td></tr>
+<tr><td>SCF-BOM-003</td><td>Material</td><td>Cone 6 stoneware casting slip</td><td>TBD</td><td>gallons</td><td>Casting slip with known fired shrinkage and absorption</td><td>Buy/mix</td><td>data/doe-build-matrix.csv</td><td>Date-check supplier and record batch number.</td></tr>
+<tr><td>SCF-BOM-004</td><td>Material</td><td>Cone 6 porcelain casting slip</td><td>TBD</td><td>gallons</td><td>Porcelain slip for comparison runs</td><td>Buy/mix</td><td>data/doe-build-matrix.csv</td><td>Higher shrink/warpage risk, better density and surface.</td></tr>
+<tr><td>SCF-BOM-005</td><td>Tuning</td><td>Diamond needle files and small diamond burrs</td><td>1</td><td>set</td><td>Fine files for bisque and fired ceramic hole tuning</td><td>Buy</td><td>assembly-manual.md</td><td>Avoid glazing acoustic edges after tuning.</td></tr>
+<tr><td>SCF-BOM-006</td><td>Validation</td><td>Measurement kit</td><td>1</td><td>kit</td><td>Calipers, bore gauges/pin gauges, tuner, mic, thermometer/hygrometer, scale</td><td>Use/buy</td><td>validation.csv</td><td>Use the same tuner/mic distance for all response tests.</td></tr>
+<tr><td>SCF-BOM-007</td><td>Voicing</td><td>Cork/stopper test kit</td><td>5</td><td>sets</td><td>Cork, silicone, or printed plug for head-end tuning experiments</td><td>Make/buy</td><td>drawing-brief.md</td><td>Treat head-stopper position as an adjustable variable before ceramic-integral solutions.</td></tr>
+<tr><td>SCF-BOM-008</td><td>Finish</td><td>Wax resist and glaze test set</td><td>1</td><td>set</td><td>Food-safe/contact-safe glaze where mouth contact occurs; acoustic edges waxed clear</td><td>Buy</td><td>mold-workflow.md</td><td>Keep glaze out of embouchure, bore, tone holes, and stopper fit surfaces.</td></tr>
+</table>
+
+<div class="page-break"></div>
+
+<h2>sourcing.csv</h2>
+
+<p>Supplier/search tracker with specs, price/date fields, lead time, substitutes, and risks.</p>
+
+<table>
+<tr><th>source_id</th><th>category</th><th>spec</th><th>supplier_or_search_terms</th><th>qty</th><th>date_checked</th><th>unit_price</th><th>lead_time</th><th>substitution_rule</th><th>risk_notes</th></tr>
+<tr><td>SRC-SLIP-STONEWARE</td><td>Ceramic slip</td><td>Cone 6 stoneware casting slip, published shrinkage and absorption data</td><td>local ceramic supplier cone 6 stoneware casting slip shrinkage data sheet</td><td>TBD</td><td></td><td></td><td></td><td>Must have measured or published shrinkage; color can vary.</td><td>Live price and availability intentionally blank until purchase planning.</td></tr>
+<tr><td>SRC-SLIP-PORCELAIN</td><td>Ceramic slip</td><td>Cone 6 porcelain casting slip, low warpage preferred</td><td>cone 6 porcelain casting slip shrinkage casting data sheet</td><td>TBD</td><td></td><td></td><td></td><td>Substitute only with data-backed shrink and firing schedule.</td><td>Porcelain may move more; use bars and rings before long D4 molds.</td></tr>
+<tr><td>SRC-PLASTER</td><td>Mold material</td><td>Pottery plaster or high-strength mold plaster</td><td>USG pottery plaster No. 1 local ceramic supplier</td><td>TBD</td><td></td><td></td><td></td><td>Must be absorbent mold plaster, not general patching plaster.</td><td>Mold drying time affects casting wall thickness and repeatability.</td></tr>
+<tr><td>SRC-PRINT</td><td>Master fabrication</td><td>High-resolution sealed print or machined master; smooth bore core strategy</td><td>SLA print service large format resin smooth finish or in-house FDM sealed master</td><td>5 masters plus coupons</td><td></td><td></td><td></td><td>Any method is acceptable if master dimensions are measured and sealed.</td><td>Layer lines transfer to plaster and may disturb mold release.</td></tr>
+<tr><td>SRC-TUNING</td><td>Tuning tools</td><td>Diamond needle files, small diamond burrs, tuner/mic</td><td>diamond needle file set ceramic tuning burr chromatic tuner measurement microphone</td><td>1 kit</td><td></td><td></td><td></td><td>Prefer fine controlled abrasion over aggressive rotary cutting.</td><td>Over-opening holes is not reversible.</td></tr>
+</table>
+
+<div class="page-break"></div>
+
+<h2>cut-list.csv</h2>
+
+<p>Rough/final stock sizes, material, grain/orientation, operations, yield, and offcuts.</p>
+
+<table>
+<tr><th>cut_id</th><th>part</th><th>qty</th><th>rough_dimensions</th><th>final_dimensions</th><th>material</th><th>orientation</th><th>operation</th><th>yield_or_notes</th></tr>
+<tr><td>CUT-SCF-D4-01</td><td>Scaled master body blank/envelope</td><td>1</td><td>28.55 x 1.67 x 1.67 in</td><td>27.554 x 1.168 x 1.168 in</td><td>Sealed printed/machined master</td><td>X along bore axis; mark top/embouchure datum</td><td>Print/machine, sand, seal, measure, then mold</td><td>Add handles/sprues outside acoustic envelope only.</td></tr>
+<tr><td>CUT-SCF-F4-01</td><td>Scaled master body blank/envelope</td><td>1</td><td>24.3 x 1.57 x 1.57 in</td><td>23.301 x 1.067 x 1.067 in</td><td>Sealed printed/machined master</td><td>X along bore axis; mark top/embouchure datum</td><td>Print/machine, sand, seal, measure, then mold</td><td>Add handles/sprues outside acoustic envelope only.</td></tr>
+<tr><td>CUT-SCF-G4-01</td><td>Scaled master body blank/envelope</td><td>1</td><td>21.9 x 1.56 x 1.56 in</td><td>20.895 x 1.056 x 1.056 in</td><td>Sealed printed/machined master</td><td>X along bore axis; mark top/embouchure datum</td><td>Print/machine, sand, seal, measure, then mold</td><td>Add handles/sprues outside acoustic envelope only.</td></tr>
+<tr><td>CUT-SCF-A4-01</td><td>Scaled master body blank/envelope</td><td>1</td><td>19.67 x 1.46 x 1.46 in</td><td>18.673 x 0.956 x 0.956 in</td><td>Sealed printed/machined master</td><td>X along bore axis; mark top/embouchure datum</td><td>Print/machine, sand, seal, measure, then mold</td><td>Add handles/sprues outside acoustic envelope only.</td></tr>
+<tr><td>CUT-SCF-C5-01</td><td>Scaled master body blank/envelope</td><td>1</td><td>16.81 x 1.34 x 1.34 in</td><td>15.808 x 0.843 x 0.843 in</td><td>Sealed printed/machined master</td><td>X along bore axis; mark top/embouchure datum</td><td>Print/machine, sand, seal, measure, then mold</td><td>Add handles/sprues outside acoustic envelope only.</td></tr>
+<tr><td>CUT-SHRINK-BAR-X</td><td>Shrinkage bar set</td><td>12</td><td>6.5 x 0.5 x 0.25 in master or cast bars</td><td>Measure fired length, width, thickness</td><td>Each slip body</td><td>Label X, Y, Z and casting direction</td><td>Cast alongside every flute run</td><td>Primary anisotropic shrink data.</td></tr>
+<tr><td>CUT-BORE-RING</td><td>Bore/roundness ring coupons</td><td>12</td><td>OD/ID matching each bore family</td><td>Measure fired ID/OD in Y and Z</td><td>Each slip body</td><td>Same drain orientation as flute</td><td>Cast with flute body</td><td>Detect ovalization and wall-thickness drift.</td></tr>
+</table>
+
+<div class="page-break"></div>
+
+<h2>drawing-brief.md</h2>
+
+<p>Manufacturing drawing and technical product sketch brief.</p>
+
+<h1>Drawing Brief</h1>
+
+<h2>Required Views</h2>
+
+<ul>
+<li>Family overview showing D4, F4, G4, A4, and C5 fired target lengths.</li>
+<li>Individual body plan view for each key with X-axis datum, embouchure, tone holes, bore ID, OD, and fired/master length notes.</li>
+<li>Section view at embouchure showing wall thickness, bore, hole edge, undercut zone, and stopper relationship.</li>
+<li>Section view through a tone hole showing chimney height and allowed tuning/undercut area.</li>
+<li>Mold stack view showing split line, registration keys, pour/drain direction, seam cleanup zone, and optional three-piece D4 strategy.</li>
+<li>Shrink coupon drawing with X/Y/Z labels and measurement flats.</li>
+</ul>
+
+<h2>Critical Dimensions</h2>
+
+<table>
+<tr><th>Dimension</th><th>Source</th><th>Tolerance Intent</th></tr>
+<tr><td>Fired sounding length</td><td>`data/fired-dimension-targets.csv` and workbook</td><td>Tuning critical</td></tr>
+<tr><td>Embouchure center from head</td><td>workbook, initial 1.5 x bore ID</td><td>Response and tuning</td></tr>
+<tr><td>Bore ID Y/Z</td><td>workbook and bore ring measurement</td><td>Tuning, response, shrink fit</td></tr>
+<tr><td>Tone-hole stations X</td><td>`data/hole-schedule.csv`</td><td>Tuning critical; first-pass only</td></tr>
+<tr><td>Tone-hole diameters</td><td>`data/hole-schedule.csv`</td><td>Cut undersize; tune after bisque</td></tr>
+<tr><td>Wall thickness</td><td>DoE wall target and measured coupons</td><td>Durability, weight, hole chimney</td></tr>
+<tr><td>Master X/Y/Z scale</td><td>shrink model</td><td>Process critical</td></tr>
+</table>
+
+<h2>Existing Drawings</h2>
+
+<ul>
+<li>`drawings/family-overview.svg`</li>
+<li>`drawings/mold-stack.svg`</li>
+<li>`drawings/SCF-D4-01-body.svg`</li>
+<li>`drawings/SCF-F4-01-body.svg`</li>
+<li>`drawings/SCF-G4-01-body.svg`</li>
+<li>`drawings/SCF-A4-01-body.svg`</li>
+<li>`drawings/SCF-C5-01-body.svg`</li>
+</ul>
+
+<p>These are SVG shop-review drawings. They are not a substitute for final CAD mold drawings with draft and release analysis.</p>
+
+<div class="page-break"></div>
+
+<h2>assembly-manual.md</h2>
+
+<p>Shop-facing sequence, tools, fixtures, safety, tuning, finishing, and maintenance notes.</p>
+
+<h1>Slip-Cast Transverse Flute Assembly Manual</h1>
+
+<h2>Tools</h2>
+
+<ul>
+<li>CAD or OpenSCAD/SolidWorks for master geometry.</li>
+<li>3D printer or machining route for sealed masters.</li>
+<li>Plaster mold supplies, cottle boards, scale, mixing bucket, release, clamps.</li>
+<li>Casting slip, deflocculant tools if mixing, and slip hydrometer if available.</li>
+<li>Needle tools, hole cutters, small round cutters, ribs, sponges, fettling knife.</li>
+<li>Calipers, bore gauges or pin gauges, scale, tuner, microphone, thermometer/hygrometer.</li>
+<li>Diamond needle files and fine diamond burrs.</li>
+<li>Wax resist, glaze, kiln access, and kiln-safe supports.</li>
+</ul>
+
+<h2>Build Sequence</h2>
+
+<p>1. Pick a build row from `data/doe-build-matrix.csv`.</p>
+<p>2. Confirm workbook shrink inputs and export the master dimensions for that run.</p>
+<p>3. Print or machine the master, then sand, seal, and measure it.</p>
+<p>4. Build the plaster mold with marked datums and registration keys.</p>
+<p>5. Dry the mold completely enough for repeatable casting.</p>
+<p>6. Pour slip, hold for the planned drain time, drain in the assigned orientation, and log the run.</p>
+<p>7. Demold at leather hard and clean seams while preserving datums.</p>
+<p>8. Cut embouchure and pilot tone holes undersize.</p>
+<p>9. Dry slowly with support under the long body.</p>
+<p>10. Bisque fire.</p>
+<p>11. Measure X/Y/Z features, bore, mass, and first tuning.</p>
+<p>12. Tune holes and embouchure in small steps using diamond tools.</p>
+<p>13. Wax resist acoustic edges and glaze only after tuning is understood.</p>
+<p>14. Final fire, then remeasure dimensions and tuning.</p>
+<p>15. Enter data into `data/prototype-measurements.csv` and update `data/shrinkage-fit.csv`.</p>
+
+<h2>Tuning Notes</h2>
+
+<ul>
+<li>Enlarge an open tone hole to raise that note.</li>
+<li>Undercutting can raise pitch and improve response, but it changes the correction model.</li>
+<li>A head stopper gives a reversible global tuning lever; use it in Round 1 before committing to an integral ceramic head solution.</li>
+<li>Do not glaze the embouchure edge, tone-hole chimneys, bore interior, or stopper seating surface during the data rounds.</li>
+</ul>
+
+<h2>Safety And Handling</h2>
+
+<ul>
+<li>Fired ceramic edges and dust need care; use wet sanding or dust control.</li>
+<li>Long greenware bodies need full support while drying and moving.</li>
+<li>Label every prototype before it enters the kiln so the DoE data survives the shop day.</li>
+</ul>
+
+<div class="page-break"></div>
+
+<h2>validation.csv</h2>
+
+<p>Target/measured values, tolerance, environment, result, and tuning/build action log.</p>
+
+<table>
+<tr><th>build_id</th><th>instrument_id</th><th>stage</th><th>measurement</th><th>target_value</th><th>unit</th><th>tolerance</th><th>measured_value</th><th>environment</th><th>result</th><th>action</th></tr>
+<tr><td></td><td>SCF-D4-01</td><td>final fired</td><td>fundamental</td><td>293.665</td><td>Hz</td><td>+/-10 cents after tuning; Round 1 accepts +/-35 cents before correction</td><td></td><td>Record temp F / humidity / tuner distance</td><td></td><td>Move stopper, file embouchure/tone holes, or update Round 2 CAD factor.</td></tr>
+<tr><td></td><td>SCF-D4-01</td><td>final fired</td><td>overall length X</td><td>24.247</td><td>in</td><td>+/-0.030 in before trim</td><td></td><td>Room temp; calipers/tape ID</td><td></td><td>Use target/measured as Round 2 X scale correction.</td></tr>
+<tr><td></td><td>SCF-D4-01</td><td>final fired</td><td>bore ID Y/Z</td><td>0.748</td><td>in</td><td>+/-0.010 in; record Y and Z separately</td><td></td><td>Pin gauge or bore gauge</td><td></td><td>Use Y/Z shrink correction and check ovalization.</td></tr>
+<tr><td></td><td>SCF-F4-01</td><td>final fired</td><td>fundamental</td><td>349.228</td><td>Hz</td><td>+/-10 cents after tuning; Round 1 accepts +/-35 cents before correction</td><td></td><td>Record temp F / humidity / tuner distance</td><td></td><td>Move stopper, file embouchure/tone holes, or update Round 2 CAD factor.</td></tr>
+<tr><td></td><td>SCF-F4-01</td><td>final fired</td><td>overall length X</td><td>20.505</td><td>in</td><td>+/-0.030 in before trim</td><td></td><td>Room temp; calipers/tape ID</td><td></td><td>Use target/measured as Round 2 X scale correction.</td></tr>
+<tr><td></td><td>SCF-F4-01</td><td>final fired</td><td>bore ID Y/Z</td><td>0.669</td><td>in</td><td>+/-0.010 in; record Y and Z separately</td><td></td><td>Pin gauge or bore gauge</td><td></td><td>Use Y/Z shrink correction and check ovalization.</td></tr>
+<tr><td></td><td>SCF-G4-01</td><td>final fired</td><td>fundamental</td><td>391.995</td><td>Hz</td><td>+/-10 cents after tuning; Round 1 accepts +/-35 cents before correction</td><td></td><td>Record temp F / humidity / tuner distance</td><td></td><td>Move stopper, file embouchure/tone holes, or update Round 2 CAD factor.</td></tr>
+<tr><td></td><td>SCF-G4-01</td><td>final fired</td><td>overall length X</td><td>18.388</td><td>in</td><td>+/-0.030 in before trim</td><td></td><td>Room temp; calipers/tape ID</td><td></td><td>Use target/measured as Round 2 X scale correction.</td></tr>
+<tr><td></td><td>SCF-G4-01</td><td>final fired</td><td>bore ID Y/Z</td><td>0.669</td><td>in</td><td>+/-0.010 in; record Y and Z separately</td><td></td><td>Pin gauge or bore gauge</td><td></td><td>Use Y/Z shrink correction and check ovalization.</td></tr>
+<tr><td></td><td>SCF-A4-01</td><td>final fired</td><td>fundamental</td><td>440.0</td><td>Hz</td><td>+/-10 cents after tuning; Round 1 accepts +/-35 cents before correction</td><td></td><td>Record temp F / humidity / tuner distance</td><td></td><td>Move stopper, file embouchure/tone holes, or update Round 2 CAD factor.</td></tr>
+<tr><td></td><td>SCF-A4-01</td><td>final fired</td><td>overall length X</td><td>16.432</td><td>in</td><td>+/-0.030 in before trim</td><td></td><td>Room temp; calipers/tape ID</td><td></td><td>Use target/measured as Round 2 X scale correction.</td></tr>
+<tr><td></td><td>SCF-A4-01</td><td>final fired</td><td>bore ID Y/Z</td><td>0.591</td><td>in</td><td>+/-0.010 in; record Y and Z separately</td><td></td><td>Pin gauge or bore gauge</td><td></td><td>Use Y/Z shrink correction and check ovalization.</td></tr>
+<tr><td></td><td>SCF-C5-01</td><td>final fired</td><td>fundamental</td><td>523.251</td><td>Hz</td><td>+/-10 cents after tuning; Round 1 accepts +/-35 cents before correction</td><td></td><td>Record temp F / humidity / tuner distance</td><td></td><td>Move stopper, file embouchure/tone holes, or update Round 2 CAD factor.</td></tr>
+<tr><td></td><td>SCF-C5-01</td><td>final fired</td><td>overall length X</td><td>13.911</td><td>in</td><td>+/-0.030 in before trim</td><td></td><td>Room temp; calipers/tape ID</td><td></td><td>Use target/measured as Round 2 X scale correction.</td></tr>
+<tr><td></td><td>SCF-C5-01</td><td>final fired</td><td>bore ID Y/Z</td><td>0.512</td><td>in</td><td>+/-0.010 in; record Y and Z separately</td><td></td><td>Pin gauge or bore gauge</td><td></td><td>Use Y/Z shrink correction and check ovalization.</td></tr>
+</table>
+
+<div class="page-break"></div>
+
+<h2>supplier-rfq.md</h2>
+
+<p>Supplier email/request-for-quote starter.</p>
+
+<h1>Supplier RFQ Starter</h1>
+
+<p>Subject: RFQ - slip-cast ceramic flute prototype materials and master/mold support</p>
+
+<p>Hello,</p>
+
+<p>I am prototyping a family of slip-cast ceramic transverse flutes and need materials or fabrication support with measured shrinkage and repeatability data.</p>
+
+<p>Please quote the following where available:</p>
+
+<ul>
+<li>Cone 6 stoneware casting slip with shrinkage, absorption, and firing schedule data.</li>
+<li>Cone 6 porcelain casting slip with shrinkage, absorption, and firing schedule data.</li>
+<li>Pottery plaster suitable for slip-casting molds.</li>
+<li>Optional high-resolution master printing or machining for long cylindrical flute masters up to about 29 in master length.</li>
+</ul>
+
+<p>Please include:</p>
+
+<ul>
+<li>unit price and minimum order,</li>
+<li>current availability and lead time,</li>
+<li>shipping or local pickup options,</li>
+<li>technical data sheets,</li>
+<li>recommended mold/drying/firing notes,</li>
+<li>any substitutions you recommend for thin-walled musical instrument bodies.</li>
+</ul>
+
+<p>The prototypes will be measured for X/Y/Z shrinkage, bore roundness, wall thickness, and acoustic tuning after firing.</p>
+
+<p>Thank you,</p>
+
+<p>Tony</p>
+
+<div class="page-break"></div>
+
+<h2>visual-bom-brief.md</h2>
+
+<p>Art direction for an image-forward visual BOM.</p>
+
+<h1>Visual BOM Brief</h1>
+
+<p>Create an image-forward BOM plate in Tony&#x27;s Ashiko BOM style:</p>
+
+<ul>
+<li>Header: Slip-Cast Transverse Flute Family, quote date, material status, and Round 1 / Round 2 label.</li>
+<li>Hero image: family fan of the five fired target flutes or a clean CAD render.</li>
+<li>Table rows grouped by CAD/master, mold, ceramic material, tuning tools, validation tools, and finishing.</li>
+<li>Include thumbnails for: master, plaster mold halves, casting slip, shrink bars, bore rings, diamond files, tuner/mic, cork/stopper kit.</li>
+<li>Add callouts showing X/Y/Z shrink axes and where measurements are taken.</li>
+<li>Mark generated/CAD imagery as placeholders until replaced with shop photos or supplier images.</li>
+</ul>
+
+<p>Important: the visual BOM should communicate process and parts, not invent unverified dimensions. Pull all numbers from the workbook and CSVs.</p>
+
+<div class="page-break"></div>
+
+<h2>wolfram-starter.wl</h2>
+
+<p>Wolfram starter for physics, optimization, visualization, and validation.</p>
+
+<pre><code>
+(* Slip-Cast Transverse Flute Family - Wolfram starter *)
+
+a4 = 440;
+cIn = 13552;
+freq[midi_] := a4*2^((midi - 69)/12);
+acousticLength[f_] := cIn/(2*f);
+endCorrection[bore_] := 0.6*bore;
+soundingLength[midi_, bore_] := acousticLength[freq[midi]] - endCorrection[bore];
+holeDistanceFromFoot[midiFund_, interval_, bore_] :=
+  acousticLength[freq[midiFund]] * freq[midiFund]/freq[midiFund + interval];
+centsError[measured_, target_] := 1200*Log2[measured/target];
+masterDim[fired_, shrink_] := fired/(1 - shrink);
+observedShrink[master_, fired_] := 1 - fired/master;
+
+family = {
+  &lt;|&quot;ID&quot; -&gt; &quot;SCF-D4-01&quot;, &quot;MIDI&quot; -&gt; 62, &quot;Bore&quot; -&gt; .748|&gt;,
+  &lt;|&quot;ID&quot; -&gt; &quot;SCF-F4-01&quot;, &quot;MIDI&quot; -&gt; 65, &quot;Bore&quot; -&gt; .669|&gt;,
+  &lt;|&quot;ID&quot; -&gt; &quot;SCF-G4-01&quot;, &quot;MIDI&quot; -&gt; 67, &quot;Bore&quot; -&gt; .669|&gt;,
+  &lt;|&quot;ID&quot; -&gt; &quot;SCF-A4-01&quot;, &quot;MIDI&quot; -&gt; 69, &quot;Bore&quot; -&gt; .591|&gt;,
+  &lt;|&quot;ID&quot; -&gt; &quot;SCF-C5-01&quot;, &quot;MIDI&quot; -&gt; 72, &quot;Bore&quot; -&gt; .512|&gt;
+};
+
+Dataset[
+  family /. inst_Association :&gt; Join[
+    inst,
+    &lt;|
+      &quot;FreqHz&quot; -&gt; freq[inst[&quot;MIDI&quot;]],
+      &quot;SoundingLengthIn&quot; -&gt; soundingLength[inst[&quot;MIDI&quot;], inst[&quot;Bore&quot;]],
+      &quot;MasterXAt12PctIn&quot; -&gt; masterDim[soundingLength[inst[&quot;MIDI&quot;], inst[&quot;Bore&quot;]], .12]
+    |&gt;
+  ]
+]
+
+Manipulate[
+ Plot[
+  Evaluate@Table[Sin[n*Pi*x/soundingLength[midi, bore]], {n, 1, 3}],
+  {x, 0, soundingLength[midi, bore]},
+  PlotRange -&gt; {-1, 1},
+  PlotLabel -&gt; Row[{&quot;Standing wave sketch, MIDI &quot;, midi, &quot;, bore &quot;, bore, &quot; in&quot;}]
+ ],
+ {{midi, 62}, 62, 72, 1},
+ {{bore, .748}, .45, .85, .001}
+]
+</code></pre>
+
+<div class="page-break"></div>
+
+<h2>README.md</h2>
+
+<p>Project artifact.</p>
+
+<h1>Slip-Cast Transverse Flute Family</h1>
+
+<p>This folder is a build packet for a first-round family of slip-cast ceramic transverse flutes. It is set up for the workflow you described: target final fired dimensions first, build from shrink-scaled masters, measure the fired results, fit X/Y/Z shrinkage and acoustic correction factors, then run a second corrected round.</p>
+
+<p>Start with:</p>
+
+<ul>
+<li>`Slip-Cast-Transverse-Flute-Family.xlsx` for the parametric workbook.</li>
+<li>`data/fired-dimension-targets.csv` for target fired dimensions.</li>
+<li>`data/hole-schedule.csv` for first-pass tone-hole stations.</li>
+<li>`data/doe-build-matrix.csv` for the Round 1 screening plan.</li>
+<li>`drawings/family-overview.svg` and individual `drawings/SCF-*-body.svg` files for shop review.</li>
+<li>`assembly-manual.md`, `mold-workflow.md`, and `validation.csv` for the actual build/measure loop.</li>
+</ul>
+
+<p>All shrink factors are deliberately provisional: X=12%, Y=12%, Z=12%. Replace them with measured values after Round 1.</p>
+
+<div class="page-break"></div>
+
+<h2>doe-plan.md</h2>
+
+<p>Project artifact.</p>
+
+<h1>Round 1 DoE Plan</h1>
+
+<h2>Purpose</h2>
+
+<p>Round 1 is a screening study for a slip-cast transverse flute family. It should answer:</p>
+
+<ul>
+<li>What are the actual X/Y/Z shrink factors for each clay/process condition?</li>
+<li>Which clay body and wall target survive long flute geometry?</li>
+<li>Does a cylindrical bore or mild taper give better response after ceramic firing?</li>
+<li>Which embouchure geometry speaks cleanly before excessive hand correction?</li>
+<li>Do shrink and acoustic errors interpolate across D4, G4, and C5 well enough to build F4 and A4 in Round 2?</li>
+</ul>
+
+<h2>Factors</h2>
+
+<table>
+<tr><th>Factor</th><th>Levels</th></tr>
+<tr><td>Key/scale</td><td>D4, G4, C5 screening; F4 and A4 family fill-ins</td></tr>
+<tr><td>Clay body</td><td>Cone 6 stoneware, Cone 6 porcelain</td></tr>
+<tr><td>Wall target</td><td>thin drain, nominal drain, thick drain</td></tr>
+<tr><td>Bore profile</td><td>cylindrical, mild taper</td></tr>
+<tr><td>Embouchure</td><td>standard oval, longer oval</td></tr>
+<tr><td>Mold orientation</td><td>horizontal drain, vertical drain</td></tr>
+</table>
+
+<h2>Responses</h2>
+
+<ul>
+<li>X/Y/Z shrink from bars, bore rings, and flute features.</li>
+<li>Bore roundness: fired ID Y vs ID Z.</li>
+<li>Wall thickness at head, middle, foot.</li>
+<li>Fundamental and six-finger scale cents error.</li>
+<li>Octave response, breath threshold, tone stability, and subjective playability.</li>
+<li>Crack/warp/sag/seam cleanup outcomes.</li>
+</ul>
+
+<h2>Round 1 Matrix</h2>
+
+<p>See `data/doe-build-matrix.csv`. It contains 20 planned runs including screening and family fill-in builds.</p>
+
+<h2>Round 2 Fit</h2>
+
+<p>Use `data/prototype-measurements.csv` and `data/shrinkage-fit.csv` to compute:</p>
+
+<pre><code>
+shrink_axis = 1 - fired_axis / master_axis
+round2_axis_scale_multiplier = target_fired_axis / measured_fired_axis
+cents_error = 1200 * log2(measured_frequency / target_frequency)
+</code></pre>
+
+<p>If material or orientation creates a strong interaction, keep separate shrink factors by material/orientation rather than forcing a single global X/Y/Z value.</p>
+
+<div class="page-break"></div>
+
+<h2>mold-workflow.md</h2>
+
+<p>Project artifact.</p>
+
+<h1>Slip-Cast Mold Workflow</h1>
+
+<h2>Master Strategy</h2>
+
+<p>1. Generate the master from the workbook/CAD dimensions using X/Y/Z scale factors.</p>
+<p>2. Add external handling tabs, pour/drain reservoir geometry, and mold keys outside the final fired acoustic envelope.</p>
+<p>3. Seal and polish the master. Measure master X/Y/Z dimensions before making plaster.</p>
+<p>4. Mark datums permanently: head end, foot end, top/embouchure side, X/Y/Z axes, split line, and build ID.</p>
+
+<h2>Mold Strategy</h2>
+
+<ul>
+<li>Use a two-piece mold for G4/A4/C5 if release is clean.</li>
+<li>Consider a three-piece or sectional mold for D4 because length, sag, and demold stress are the main risks.</li>
+<li>Mold center marks or shallow dimples for holes are useful; avoid fully molded tone holes in Round 1 unless release testing proves they are clean.</li>
+<li>Keep registration keys away from the bore axis, embouchure edge, hole centers, and seam-cleanup surfaces.</li>
+<li>Include a pour/drain reservoir that can be removed without touching the fired trim target.</li>
+</ul>
+
+<h2>Casting Controls</h2>
+
+<p>Record these for every run:</p>
+
+<ul>
+<li>slip body and batch,</li>
+<li>mold dry weight and mold age,</li>
+<li>pour time, drain time, and drain orientation,</li>
+<li>room temperature and humidity,</li>
+<li>leather-hard demold time,</li>
+<li>wall thickness at sacrificial rim/coupon,</li>
+<li>dry, bisque, and glaze firing schedules,</li>
+<li>fired mass, length, bore Y/Z, OD Y/Z, and note frequencies.</li>
+</ul>
+
+<h2>Tuning-Friendly Hole Strategy</h2>
+
+<p>1. Cast the body with molded center marks only.</p>
+<p>2. Cut pilot holes at leather hard, about 85% of the shrink-compensated target diameter.</p>
+<p>3. Dry and bisque.</p>
+<p>4. Tune by opening holes with diamond tools. Stop before final glaze.</p>
+<p>5. Wax resist all acoustic edges before glaze.</p>
+
+<h2>Failure Modes To Watch</h2>
+
+<ul>
+<li>Long D4 body sags or twists while drying.</li>
+<li>Bore ovalizes differently in Y and Z.</li>
+<li>Mold seam intrudes into the embouchure or tone-hole region.</li>
+<li>Wall thickness drifts with drain time enough to change hole chimney height.</li>
+<li>Glaze softens, rounds, or chokes the embouchure and tone-hole edges.</li>
+</ul>
+</body></html>

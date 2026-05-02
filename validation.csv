@@ -1,0 +1,16 @@
+build_id,instrument_id,stage,measurement,target_value,unit,tolerance,measured_value,environment,result,action
+,SCF-D4-01,final fired,fundamental,293.665,Hz,+/-10 cents after tuning; Round 1 accepts +/-35 cents before correction,,Record temp F / humidity / tuner distance,,"Move stopper, file embouchure/tone holes, or update Round 2 CAD factor."
+,SCF-D4-01,final fired,overall length X,24.247,in,+/-0.030 in before trim,,Room temp; calipers/tape ID,,Use target/measured as Round 2 X scale correction.
+,SCF-D4-01,final fired,bore ID Y/Z,0.748,in,+/-0.010 in; record Y and Z separately,,Pin gauge or bore gauge,,Use Y/Z shrink correction and check ovalization.
+,SCF-F4-01,final fired,fundamental,349.228,Hz,+/-10 cents after tuning; Round 1 accepts +/-35 cents before correction,,Record temp F / humidity / tuner distance,,"Move stopper, file embouchure/tone holes, or update Round 2 CAD factor."
+,SCF-F4-01,final fired,overall length X,20.505,in,+/-0.030 in before trim,,Room temp; calipers/tape ID,,Use target/measured as Round 2 X scale correction.
+,SCF-F4-01,final fired,bore ID Y/Z,0.669,in,+/-0.010 in; record Y and Z separately,,Pin gauge or bore gauge,,Use Y/Z shrink correction and check ovalization.
+,SCF-G4-01,final fired,fundamental,391.995,Hz,+/-10 cents after tuning; Round 1 accepts +/-35 cents before correction,,Record temp F / humidity / tuner distance,,"Move stopper, file embouchure/tone holes, or update Round 2 CAD factor."
+,SCF-G4-01,final fired,overall length X,18.388,in,+/-0.030 in before trim,,Room temp; calipers/tape ID,,Use target/measured as Round 2 X scale correction.
+,SCF-G4-01,final fired,bore ID Y/Z,0.669,in,+/-0.010 in; record Y and Z separately,,Pin gauge or bore gauge,,Use Y/Z shrink correction and check ovalization.
+,SCF-A4-01,final fired,fundamental,440.0,Hz,+/-10 cents after tuning; Round 1 accepts +/-35 cents before correction,,Record temp F / humidity / tuner distance,,"Move stopper, file embouchure/tone holes, or update Round 2 CAD factor."
+,SCF-A4-01,final fired,overall length X,16.432,in,+/-0.030 in before trim,,Room temp; calipers/tape ID,,Use target/measured as Round 2 X scale correction.
+,SCF-A4-01,final fired,bore ID Y/Z,0.591,in,+/-0.010 in; record Y and Z separately,,Pin gauge or bore gauge,,Use Y/Z shrink correction and check ovalization.
+,SCF-C5-01,final fired,fundamental,523.251,Hz,+/-10 cents after tuning; Round 1 accepts +/-35 cents before correction,,Record temp F / humidity / tuner distance,,"Move stopper, file embouchure/tone holes, or update Round 2 CAD factor."
+,SCF-C5-01,final fired,overall length X,13.911,in,+/-0.030 in before trim,,Room temp; calipers/tape ID,,Use target/measured as Round 2 X scale correction.
+,SCF-C5-01,final fired,bore ID Y/Z,0.512,in,+/-0.010 in; record Y and Z separately,,Pin gauge or bore gauge,,Use Y/Z shrink correction and check ovalization.
