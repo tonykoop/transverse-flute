@@ -432,22 +432,225 @@ Manipulate[
 
 <p>Project artifact.</p>
 
-<h1>Slip-Cast Transverse Flute Family</h1>
+<h1>Transverse Flute - Experimental Slip-Cast Ceramic Flute Lab</h1>
 
-<p>This folder is a build packet for a first-round family of slip-cast ceramic transverse flutes. It is set up for the workflow you described: target final fired dimensions first, build from shrink-scaled masters, measure the fired results, fit X/Y/Z shrinkage and acoustic correction factors, then run a second corrected round.</p>
+<p>&gt; *A preparatory design repository for a family of slip-cast ceramic transverse flutes - unvalidated, intentionally provisional, and ready to become the project accelerator once materials and shop time arrive.*</p>
 
-<p>Start with:</p>
+<p>![Family overview drawing](drawings/family-overview.svg)</p>
+<p>*First-pass fired target family for D4, F4, G4, A4, and C5. These are planning dimensions, not proven instrument dimensions.*</p>
+
+<h2>What this is</h2>
+
+<p>Engineering documentation for an **experimental slip-cast ceramic transverse flute family**. The idea is to start with target final fired dimensions, scale the build masters for X/Y/Z ceramic shrinkage, cast and fire the first round, measure what actually happened, then use those measurements to correct the second round.</p>
+
+<p>This repository is not a finished portfolio of validated instruments yet. It is creative preparatory space: an accelerator, launchpad, laboratory notebook, design-control folder, and build packet so the project can move fast once supplies are acquired.</p>
+
+<p>The repository combines:</p>
+
+<p>1. **A parametric design workbook** ([`Slip-Cast-Transverse-Flute-Family.xlsx`](Slip-Cast-Transverse-Flute-Family.xlsx)) with fired target dimensions, provisional master scaling, tone-hole schedules, a DoE matrix, measurement tables, and shrink-factor fitting sheets.</p>
+<p>2. **A Round 1 design-of-experiments plan** ([`doe-plan.md`](doe-plan.md)) for comparing clay bodies, wall targets, bore profiles, embouchure geometry, and mold/drain orientation.</p>
+<p>3. **Shop-facing build documentation**: [`design.md`](design.md), [`mold-workflow.md`](mold-workflow.md), [`assembly-manual.md`](assembly-manual.md), [`validation.csv`](validation.csv), [`bom.csv`](bom.csv), [`sourcing.csv`](sourcing.csv), and [`supplier-rfq.md`](supplier-rfq.md).</p>
+<p>4. **Drawings and starter CAD** in [`drawings/`](drawings/), [`cad/`](cad/), and [`cnc/`](cnc/) so the first physical work can move from sketch to master/mold planning without starting from a blank page.</p>
+
+<p>Sister project to [`flutes`](https://github.com/tonykoop/flutes), [`fujara`](https://github.com/tonykoop/fujara), [`didgeridoo`](https://github.com/tonykoop/didgeridoo), [`tongue-drum`](https://github.com/tonykoop/tongue-drum), and the broader instrument workshop documentation in this GitHub folder.</p>
+
+<h2>Status and validation warning</h2>
+
+<p>This design has **not been physically built, tuned, fired, or validated**. The dimensions are first-pass engineering targets based on open-open flute math, ceramic shrinkage assumptions, and Tony&#x27;s existing flute design-table habits.</p>
+
+<p>Use every number in this repository as one of:</p>
 
 <ul>
-<li>`Slip-Cast-Transverse-Flute-Family.xlsx` for the parametric workbook.</li>
-<li>`data/fired-dimension-targets.csv` for target fired dimensions.</li>
-<li>`data/hole-schedule.csv` for first-pass tone-hole stations.</li>
-<li>`data/doe-build-matrix.csv` for the Round 1 screening plan.</li>
-<li>`drawings/family-overview.svg` and individual `drawings/SCF-*-body.svg` files for shop review.</li>
-<li>`assembly-manual.md`, `mold-workflow.md`, and `validation.csv` for the actual build/measure loop.</li>
+<li>`target` - what the fired instrument is intended to become,</li>
+<li>`assumption` - what Round 1 is testing,</li>
+<li>`starting point` - what will be corrected after measurement.</li>
 </ul>
 
-<p>All shrink factors are deliberately provisional: X=12%, Y=12%, Z=12%. Replace them with measured values after Round 1.</p>
+<p>The design is ready for preparation, quoting, sourcing, CAD cleanup, mold planning, and experimental setup. It is not ready to be treated as a proven flute recipe.</p>
+
+<h2>Background - why slip casting changes the flute problem</h2>
+
+<p>A transverse flute is an open-open air column excited by a player blowing across an embouchure edge. In a wooden or metal flute, the maker can usually machine the bore and holes directly to final dimensions, then tune by controlled cutting, undercutting, or keywork adjustments.</p>
+
+<p>Slip-cast ceramic adds a different engineering loop:</p>
+
+<ul>
+<li>the model/master is not the final size,</li>
+<li>wet clay, bone-dry clay, bisque, and glaze-fired ceramic each move differently,</li>
+<li>X/Y/Z shrinkage may not be equal,</li>
+<li>long thin tubes can sag or ovalize,</li>
+<li>wall buildup changes tone-hole chimney height,</li>
+<li>glaze can damage acoustic edges if it enters the embouchure, bore, or holes.</li>
+</ul>
+
+<p>That makes this project a natural fit for a measured iteration cycle. Round 1 is mostly about learning the clay/process correction factors. Round 2 is where the design becomes more serious.</p>
+
+<h2>Governing acoustic model</h2>
+
+<p>First-pass model:</p>
+
+<pre><code>
+f = c / (2 * L_eff)
+L_acoustic = c / (2 * f)
+end_correction_total ~= 0.6 * bore_ID
+sounding_length ~= L_acoustic - end_correction_total
+hole_distance_from_foot ~= L_acoustic * (fundamental_frequency / hole_frequency)
+</code></pre>
+
+<p>This is enough to create a rational starting family, not enough to declare success. Embouchure shape, hole chimney height, wall thickness, bore roundness, stopper position, undercutting, and ceramic surface quality will all move the real instrument.</p>
+
+<h2>The first design family</h2>
+
+<table>
+<tr><th>ID</th><th>Key</th><th>Role</th><th>Fired pre-trim length</th><th>Initial master X @ 12% shrink</th></tr>
+<tr><td>SCF-D4-01</td><td>D4</td><td>Low reference / long-body risk case</td><td>24.247 in</td><td>27.554 in</td></tr>
+<tr><td>SCF-F4-01</td><td>F4</td><td>Family interpolation check</td><td>20.505 in</td><td>23.301 in</td></tr>
+<tr><td>SCF-G4-01</td><td>G4</td><td>Middle reference / likely first practical prototype</td><td>18.388 in</td><td>20.895 in</td></tr>
+<tr><td>SCF-A4-01</td><td>A4</td><td>Family interpolation check</td><td>16.432 in</td><td>18.673 in</td></tr>
+<tr><td>SCF-C5-01</td><td>C5</td><td>Soprano / short-body response check</td><td>13.911 in</td><td>15.808 in</td></tr>
+</table>
+
+<p>The detailed target table is in [`data/fired-dimension-targets.csv`](data/fired-dimension-targets.csv). The first-pass hole schedule is in [`data/hole-schedule.csv`](data/hole-schedule.csv).</p>
+
+<h2>Shrinkage model</h2>
+
+<p>Coordinate convention:</p>
+
+<ul>
+<li>X = flute length, bore axis, embouchure station, and tone-hole stations.</li>
+<li>Y = side-to-side bore/OD width and horizontal hole dimensions.</li>
+<li>Z = vertical bore/OD height, wall buildup direction, sag, and ovalization.</li>
+</ul>
+
+<p>The workbook starts at a deliberately provisional 12% shrink in each axis:</p>
+
+<pre><code>
+master_x = fired_target_x / (1 - shrink_x)
+master_y = fired_target_y / (1 - shrink_y)
+master_z = fired_target_z / (1 - shrink_z)
+observed_shrink_axis = 1 - fired_measured_axis / master_measured_axis
+round2_master_axis = round1_master_axis * fired_target_axis / fired_measured_axis
+</code></pre>
+
+<p>Those values are placeholders until fired test bars, bore rings, and flute bodies are measured.</p>
+
+<h2>Round 1 DoE</h2>
+
+<p>Round 1 is a screening study, not a production batch. It varies:</p>
+
+<ul>
+<li>key/scale: D4, G4, and C5 screening with F4/A4 family fill-ins,</li>
+<li>clay body: cone 6 stoneware and cone 6 porcelain,</li>
+<li>wall target: thin, nominal, and thick drain conditions,</li>
+<li>bore profile: cylindrical and mild taper,</li>
+<li>embouchure geometry: standard oval and longer oval,</li>
+<li>mold/drain orientation: horizontal and vertical.</li>
+</ul>
+
+<p>Primary responses:</p>
+
+<ul>
+<li>X/Y/Z shrink,</li>
+<li>bore roundness and wall thickness,</li>
+<li>crack/warp/sag/seam outcomes,</li>
+<li>fundamental and scale-note cents error,</li>
+<li>octave response and breath threshold,</li>
+<li>subjective playability and tonal stability.</li>
+</ul>
+
+<p>The run matrix is in [`data/doe-build-matrix.csv`](data/doe-build-matrix.csv).</p>
+
+<h2>Engineering challenges this repository is meant to capture</h2>
+
+<p>**1. Translating additive-manufacturing shrink intuition into ceramic slip casting.** The project deliberately separates target fired dimensions from master dimensions, then treats X/Y/Z shrink as measured process data rather than a fixed catalog value.</p>
+
+<p>**2. Keeping the acoustic model honest.** Open-open flute math gives the starting geometry, but ceramic flute behavior will be corrected from measured prototypes. The validation sheets are as important as the design table.</p>
+
+<p>**3. Designing for a fragile long body before the materials are on hand.** The D4 body is long enough that mold strategy, drying support, seam cleanup, and bore ovalization are major design concerns before a single note is played.</p>
+
+<p>**4. Creating a repository that becomes useful the moment supplies arrive.** This repo is the setup work: BOM, sourcing, RFQ, shop sequence, drawings, CAD starter, DoE protocol, and measurement schema.</p>
+
+<h2>How to use this repository</h2>
+
+<p>Start here:</p>
+
+<ul>
+<li>[`print-packet.html`](print-packet.html) - browser-friendly combined packet for reading or printing.</li>
+<li>[`Slip-Cast-Transverse-Flute-Family.xlsx`](Slip-Cast-Transverse-Flute-Family.xlsx) - the parametric workbook and measurement hub.</li>
+<li>[`design.md`](design.md) - the compact engineering brief.</li>
+<li>[`doe-plan.md`](doe-plan.md) - the experimental plan.</li>
+<li>[`mold-workflow.md`](mold-workflow.md) - the slip-casting control plan.</li>
+<li>[`assembly-manual.md`](assembly-manual.md) - shop sequence from master through final validation.</li>
+</ul>
+
+<p>Then, once supplies are acquired:</p>
+
+<p>1. Date-check suppliers and update [`sourcing.csv`](sourcing.csv).</p>
+<p>2. Pick the first Round 1 run from [`data/doe-build-matrix.csv`](data/doe-build-matrix.csv).</p>
+<p>3. Make and measure the master.</p>
+<p>4. Cast shrink bars, bore rings, and the flute body together.</p>
+<p>5. Record measurements in [`data/prototype-measurements.csv`](data/prototype-measurements.csv).</p>
+<p>6. Fit Round 2 corrections in [`data/shrinkage-fit.csv`](data/shrinkage-fit.csv).</p>
+
+<h2>Repository structure</h2>
+
+<pre><code>
+transverse-flute/
+|-- README.md
+|-- LICENSE                    &lt;- CC-BY 4.0
+|-- Slip-Cast-Transverse-Flute-Family.xlsx
+|-- design.md
+|-- doe-plan.md
+|-- mold-workflow.md
+|-- assembly-manual.md
+|-- bom.csv
+|-- sourcing.csv
+|-- supplier-rfq.md
+|-- validation.csv
+|-- cut-list.csv
+|-- print-packet.md / print-packet.html
+|-- capstone-deck.md
+|-- data/
+|   |-- fired-dimension-targets.csv
+|   |-- hole-schedule.csv
+|   |-- doe-build-matrix.csv
+|   |-- prototype-measurements.csv
+|   `-- shrinkage-fit.csv
+|-- drawings/
+|   |-- family-overview.svg
+|   |-- mold-stack.svg
+|   `-- SCF-*-body.svg
+|-- cad/
+|   `-- slip_cast_transverse_flute_body.scad
+|-- cnc/
+|   `-- master-fabrication-plan.md
+`-- scripts/
+    `-- generate_packet.py
+</code></pre>
+
+<h2>Status</h2>
+
+<table>
+<tr><th>Section</th><th>Status</th></tr>
+<tr><td>Repo description and CC-BY license</td><td>done</td></tr>
+<tr><td>Parametric workbook</td><td>first-pass generated</td></tr>
+<tr><td>Fired target dimension table</td><td>first-pass generated</td></tr>
+<tr><td>Tone-hole schedule</td><td>first-pass generated</td></tr>
+<tr><td>Round 1 DoE plan</td><td>drafted</td></tr>
+<tr><td>Mold workflow</td><td>drafted</td></tr>
+<tr><td>Shop assembly manual</td><td>drafted</td></tr>
+<tr><td>CAD body starter</td><td>preliminary OpenSCAD concept</td></tr>
+<tr><td>Manufacturing drawings</td><td>SVG review drawings only</td></tr>
+<tr><td>Supplier pricing and availability</td><td>not checked</td></tr>
+<tr><td>Physical prototypes</td><td>not started</td></tr>
+<tr><td>Fired shrink validation</td><td>no data yet</td></tr>
+<tr><td>Acoustic validation</td><td>no data yet</td></tr>
+<tr><td>Round 2 correction factors</td><td>pending Round 1</td></tr>
+</table>
+
+<h2>License</h2>
+
+<p>Released under [CC-BY 4.0](LICENSE) - use freely with attribution. The written documentation, generated design tables, drawings, scripts, and experimental framework in this repository are my own preparatory engineering work. Because the instrument design is unvalidated, reuse should preserve the experimental status and measurement assumptions until physical builds prove otherwise.</p>
 
 <div class="page-break"></div>
 

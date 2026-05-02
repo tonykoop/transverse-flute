@@ -964,25 +964,18 @@ def workbook_rows(family_rows: list[dict[str, object]], hole_rows: list[dict[str
 
 def write_markdown_docs(family_rows: list[dict[str, object]], doe: list[dict[str, object]]) -> None:
     family_table = family_markdown(family_rows)
-    write_text(
-        ROOT / "README.md",
-        f"""
-# Slip-Cast Transverse Flute Family
+    readme_path = ROOT / "README.md"
+    if not readme_path.exists():
+        write_text(
+            readme_path,
+            """
+# Transverse Flute - Experimental Slip-Cast Ceramic Flute Lab
 
-This folder is a build packet for a first-round family of slip-cast ceramic transverse flutes. It is set up for the workflow you described: target final fired dimensions first, build from shrink-scaled masters, measure the fired results, fit X/Y/Z shrinkage and acoustic correction factors, then run a second corrected round.
+Preparatory design repository for an unvalidated family of slip-cast ceramic transverse flutes. Start with `Slip-Cast-Transverse-Flute-Family.xlsx`, `design.md`, `doe-plan.md`, `mold-workflow.md`, and `print-packet.html`.
 
-Start with:
-
-- `Slip-Cast-Transverse-Flute-Family.xlsx` for the parametric workbook.
-- `data/fired-dimension-targets.csv` for target fired dimensions.
-- `data/hole-schedule.csv` for first-pass tone-hole stations.
-- `data/doe-build-matrix.csv` for the Round 1 screening plan.
-- `drawings/family-overview.svg` and individual `drawings/SCF-*-body.svg` files for shop review.
-- `assembly-manual.md`, `mold-workflow.md`, and `validation.csv` for the actual build/measure loop.
-
-All shrink factors are deliberately provisional: X=12%, Y=12%, Z=12%. Replace them with measured values after Round 1.
+All dimensions are first-pass targets until physical casting, firing, tuning, and measurement data prove or correct them.
 """,
-    )
+        )
     write_text(
         ROOT / "design.md",
         f"""
