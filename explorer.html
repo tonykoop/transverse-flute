@@ -361,6 +361,7 @@ mark.hit{background:var(--gold);color:var(--ink);
   <div class="actions">
     <input id="search" class="search" placeholder="Search packet content…" aria-label="Search packet content">
     <a class="action-btn" href="print-packet.html" target="_blank" rel="noopener">Print packet</a>
+    <a class="action-btn" href="../instrument-showcase/site/library.html" title="Browse all studio explorers">Library</a>
     <a class="action-btn" href="https://github.com/tonykoop/transverse-flute" target="_blank" rel="noopener">GitHub</a>
   </div>
 </header>
@@ -381,15 +382,15 @@ mark.hit{background:var(--gold);color:var(--ink);
 
   <div class="status-row">
     <div class="status-label">Status</div>
-    <div class="status-val"><span class="pill pill-private">Private review</span>&nbsp;&nbsp;</div>
+    <div class="status-val"><span class="pill pill-private">V5 explorer candidate</span>&nbsp;&nbsp;<span class="muted">First-pass prototype packet; not measured, fired, tuned, or shop-released.</span></div>
   </div>
   <div class="status-row">
     <div class="status-label">Family</div>
-    <div class="status-val"><span class="muted">(single build target — no family declared)</span></div>
+    <div class="status-val"><span class="pill pill-fam">D4</span><span class="pill pill-fam">F4</span><span class="pill pill-fam">G4</span><span class="pill pill-fam">A4</span><span class="pill pill-fam">C5</span></div>
   </div>
   <div class="status-row">
     <div class="status-label">Release gates</div>
-    <div class="status-val"><ul class="gates"><li class="gate"><span class="gate-dot block"></span><span class="gate-label">Physical build, fired-shrink, and acoustic validation remain unproven for this experimental slip-cast family.</span></li><li class="gate"><span class="gate-dot block"></span><span class="gate-label">Capstone deck PPTX is not present; the manifest records Markdown only for this artifact.</span></li><li class="gate"><span class="gate-dot block"></span><span class="gate-label">Print packet PDF is not present; use the checked-in HTML packet as the current browser-print source.</span></li><li class="gate"><span class="gate-dot block"></span><span class="gate-label">Public build-log/site artifact is not present yet; this explorer remains a studio-facing review page.</span></li></ul></div>
+    <div class="status-val"><ul class="gates"><li class="gate"><span class="gate-dot ok"></span><span class="gate-label">V5 acoustic-law summary added in <code>family-spec.csv</code>: open-open, both ends open, first-pass physics-derived.</span></li><li class="gate"><span class="gate-dot ok"></span><span class="gate-label">Visual authority chain added in <code>visual-output-register.csv</code>; SVG drawings remain derived previews, not standalone cut authority.</span></li><li class="gate"><span class="gate-dot block"></span><span class="gate-label">Physical build, fired-shrink, tone-hole correction, and acoustic validation remain unproven for this experimental slip-cast family.</span></li><li class="gate"><span class="gate-dot block"></span><span class="gate-label">DXF export, rendered V5 images, exploded diagram, and annotated PDF plate are not present yet; no generated image is dimensional authority.</span></li></ul></div>
   </div>
 </article>
 
@@ -421,6 +422,8 @@ mark.hit{background:var(--gold);color:var(--ink);
 <section id="design" data-toc="Design" data-toc-group="Design">
   <h1><span class="eyebrow">· Design</span>Design</h1>
 <div class="file open"><div class="file-head" onclick="toggleFile(this)"><span class="icon">▶</span><span class="file-name">design.md</span><span class="file-type">MD</span><span class="file-desc">Design narrative</span><span class="file-actions"><a href="design.md" target="_blank" rel="noopener">Open</a></span></div><div class="file-body" data-md="design.md"></div></div>
+<div class="file open"><div class="file-head" onclick="toggleFile(this)"><span class="icon">▶</span><span class="file-name">family-spec.csv</span><span class="file-type">CSV</span><span class="file-desc">V5 acoustic law and end-condition summary</span><span class="file-actions"><a href="family-spec.csv" target="_blank" rel="noopener">Open</a></span></div><div class="file-body" data-csv="family-spec.csv"></div></div>
+<div class="file"><div class="file-head" onclick="toggleFile(this)"><span class="icon">▶</span><span class="file-name">visual-output-register.csv</span><span class="file-type">CSV</span><span class="file-desc">Visual/fabrication authority register</span><span class="file-actions"><a href="visual-output-register.csv" target="_blank" rel="noopener">Open</a></span></div><div class="file-body" data-csv="visual-output-register.csv"></div></div>
 </section>
 
 <section id="assembly" data-toc="Assembly Manual" data-toc-group="Build">

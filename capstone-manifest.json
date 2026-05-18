@@ -1,9 +1,25 @@
 {
-  "packet_dir": "/mnt/c/Users/Tony/Documents/GitHub/transverse-flute",
+  "packet_dir": ".",
   "title": "Slip-Cast Transverse Flute Family",
-  "generated": "2026-05-02",
+  "generated": "2026-05-18",
+  "issue": {
+    "repo": "tonykoop/transverse-flute",
+    "number": 1,
+    "url": "https://github.com/tonykoop/transverse-flute/issues/1",
+    "title": "[transverse-flute] Generate V5 build packet"
+  },
+  "status": {
+    "readiness": "V5 explorer/build-packet candidate for review",
+    "fabrication_authority": "first-pass prototype planning tables plus local OpenSCAD body starter",
+    "measurement_status": "not physically built, fired, tuned, or validated",
+    "cad_dxf_status": "OpenSCAD starter present; DXF export and final mold CAD still required before shop release"
+  },
   "files_included": [
+    "README.md",
     "design.md",
+    "family-spec.csv",
+    "visual-output-register.csv",
+    "cad/mcp-session-log.md",
     "bom.csv",
     "sourcing.csv",
     "cut-list.csv",
@@ -13,18 +29,91 @@
     "supplier-rfq.md",
     "visual-bom-brief.md",
     "wolfram-starter.wl",
-    "README.md",
     "doe-plan.md",
-    "mold-workflow.md"
+    "mold-workflow.md",
+    "data/fired-dimension-targets.csv",
+    "data/hole-schedule.csv",
+    "data/doe-build-matrix.csv",
+    "data/prototype-measurements.csv",
+    "data/shrinkage-fit.csv",
+    "cad/slip_cast_transverse_flute_body.scad",
+    "drawings/family-overview.svg",
+    "drawings/mold-stack.svg",
+    "drawings/SCF-D4-01-body.svg",
+    "drawings/SCF-F4-01-body.svg",
+    "drawings/SCF-G4-01-body.svg",
+    "drawings/SCF-A4-01-body.svg",
+    "drawings/SCF-C5-01-body.svg"
+  ],
+  "v5_deliverables": [
+    {
+      "deliverable": "Parametric CAD",
+      "path": "cad/slip_cast_transverse_flute_body.scad",
+      "status": "present_as_local_starter",
+      "authority_note": "G4 body-envelope starter reconciled to family-spec.csv; final mold draft/release CAD still required."
+    },
+    {
+      "deliverable": "Vector design plates",
+      "path": "drawings/",
+      "status": "svg_review_previews_present",
+      "authority_note": "Registered as derived previews; DXF export is still required before laser/CNC release."
+    },
+    {
+      "deliverable": "Hero render",
+      "path": "images/hero-render.png",
+      "status": "missing",
+      "authority_note": "No Blender/MCP render was generated in this lane."
+    },
+    {
+      "deliverable": "Exploded diagram",
+      "path": "images/exploded-diagram.png",
+      "status": "missing",
+      "authority_note": "No exploded render was generated in this lane."
+    },
+    {
+      "deliverable": "AI-generated artistic shots",
+      "path": "images/",
+      "status": "missing",
+      "authority_note": "No image-gen outputs are claimed; any future images must be concept_only/reference_only."
+    },
+    {
+      "deliverable": "Annotated print plate",
+      "path": "print-packet/assembly-plate.pdf",
+      "status": "missing",
+      "authority_note": "Current printable packet is print-packet.html; no Photoshop/MCP PDF plate was generated."
+    },
+    {
+      "deliverable": "MCP provenance log",
+      "path": "cad/mcp-session-log.md",
+      "status": "present_no_live_mcp_sessions",
+      "authority_note": "Log records that this lane did not run live MCP tools or create MCP-derived assets."
+    }
   ],
   "outputs": {
-    "capstone_deck_markdown": "/mnt/c/Users/Tony/Documents/GitHub/transverse-flute/capstone-deck.md",
+    "capstone_deck_markdown": "capstone-deck.md",
     "capstone_deck_pptx": null,
-    "print_packet_markdown": "/mnt/c/Users/Tony/Documents/GitHub/transverse-flute/print-packet.md",
-    "print_packet_html": "/mnt/c/Users/Tony/Documents/GitHub/transverse-flute/print-packet.html"
+    "print_packet_markdown": "print-packet.md",
+    "print_packet_html": "print-packet.html",
+    "studio_explorer": "explorer.html"
+  },
+  "validation": {
+    "required_before_shop_release": [
+      "Prototype fired-shrink measurements in data/prototype-measurements.csv",
+      "Acoustic pitch and cents-error measurements across temperature and humidity",
+      "Final CAD/DXF mold package with draft, split-line, and release analysis",
+      "Supplier/date checks in sourcing.csv",
+      "Visual-output register update for any future render, DXF, PDF, or image-gen artifact"
+    ],
+    "commands": [
+      "jq . capstone-manifest.json",
+      "test -f explorer.html",
+      "python3 ${CODEX_HOME:-$HOME/.codex}/skills/instrument-maker/scripts/validate_acoustic_law.py family-spec.csv",
+      "python3 ${CODEX_HOME:-$HOME/.codex}/skills/instrument-maker/scripts/validate_visual_authority.py visual-output-register.csv",
+      "git diff --check"
+    ]
   },
   "notes": [
-    "PPTX is created only when python-pptx is installed in the active Python environment.",
-    "Use the HTML file for browser print-to-PDF when direct PDF tooling is unavailable."
+    "All paths are repository-relative for portable explorer/capstone use.",
+    "The packet remains honest about open tone-hole, ceramic shrink, bore-roundness, and stopper-position assumptions."
   ]
 }

@@ -32,3 +32,13 @@
 - `drawings/SCF-C5-01-body.svg`
 
 These are SVG shop-review drawings. They are not a substitute for final CAD mold drawings with draft and release analysis.
+
+## V5 Visual Authority
+
+The visual authority chain is tracked in
+[`visual-output-register.csv`](visual-output-register.csv). The design tables
+and OpenSCAD starter are first-pass prototype fabrication authority for current
+planning geometry only. The SVG drawings are derived review previews and must
+not be treated as standalone cut-ready DXF/CNC authority. No generated image is
+dimensional authority for bore length, embouchure geometry, tone-hole position,
+wall thickness, mold split lines, or toolpaths.

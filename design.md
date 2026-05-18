@@ -32,6 +32,13 @@ hole_distance_from_foot ~= L_acoustic * (fundamental_frequency / hole_frequency)
 
 The hole positions are first-pass acoustic stations. Ceramic wall thickness, hole chimney height, undercutting, bore ovalization, embouchure geometry, and stopper position will move real pitch. The packet therefore makes hole cuts undersize and expects bisque-stage tuning.
 
+The V5 acoustic-law summary is tracked in [`family-spec.csv`](family-spec.csv).
+Every family row declares `acoustic_law=open_open`,
+`end_condition=both_ends_open`, and `dimension_provenance=physics_derived`.
+Those fields describe the first-pass planning model only; measured prototype
+pitch, bore roundness, shrink, and tone-hole correction data are still required
+before the dimensions become validated tuning authority.
+
 ## Initial Family Targets
 
 | ID | Key | Bore ID | OD | Sounding length | Pre-trim fired length | Master X length @12% |
