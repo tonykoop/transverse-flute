@@ -1,0 +1,12 @@
+artifact_id,path,artifact_kind,role,authority,derived_from,dimension_claim,notes
+DESIGN-001,data/fired-dimension-targets.csv,design_table,design_table,fabrication,,derived_from_authority,First-pass prototype target geometry only; controls current planning packet but is not measured tuning proof.
+DESIGN-002,data/hole-schedule.csv,design_table,design_table,fabrication,,derived_from_authority,First-pass open-open tone-hole schedule; holes remain undersize and require bisque-stage tuning.
+CAD-001,cad/slip_cast_transverse_flute_body.scad,cad,fabrication_geometry,fabrication,DESIGN-001,derived_from_authority,Parametric body-envelope starter for the G4 prototype tube; not a final production mold or measured acoustic validation.
+SVG-001,drawings/family-overview.svg,svg_preview,derived_preview,derived_preview,DESIGN-001,derived_from_authority,Family overview preview derived from design-table targets.
+SVG-002,drawings/mold-stack.svg,svg_preview,derived_preview,derived_preview,DESIGN-001,derived_from_authority,Mold-stack review preview; split lines and draft still require CAD/tooling review.
+SVG-003,drawings/SCF-D4-01-body.svg,svg_preview,derived_preview,derived_preview,DESIGN-001,derived_from_authority,D4 body review preview; not standalone cut authority.
+SVG-004,drawings/SCF-F4-01-body.svg,svg_preview,derived_preview,derived_preview,DESIGN-001,derived_from_authority,F4 body review preview; not standalone cut authority.
+SVG-005,drawings/SCF-G4-01-body.svg,svg_preview,derived_preview,derived_preview,DESIGN-001,derived_from_authority,G4 body review preview; not standalone cut authority.
+SVG-006,drawings/SCF-A4-01-body.svg,svg_preview,derived_preview,derived_preview,DESIGN-001,derived_from_authority,A4 body review preview; not standalone cut authority.
+SVG-007,drawings/SCF-C5-01-body.svg,svg_preview,derived_preview,derived_preview,DESIGN-001,derived_from_authority,C5 body review preview; not standalone cut authority.
+WBOOK-001,Slip-Cast-Transverse-Flute-Family.xlsx,design_table,design_table,fabrication,DESIGN-001,derived_from_authority,Workbook mirrors the first-pass design tables and measurement templates; values require live review before shop release.

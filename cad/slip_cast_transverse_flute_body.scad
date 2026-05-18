@@ -1,9 +1,13 @@
 // Slip-cast transverse flute body concept model.
 // Units: inches. Convert to mm in slicer/CAD if needed.
 // This is a geometry starter, not a final mold with draft analysis.
+// Dimensions are first-pass prototype targets from family-spec.csv and
+// data/fired-dimension-targets.csv; they are not measured tuning proof.
 
 instrument_id = "SCF-G4-01";
-fired_length = 17.786;
+family_spec_source = "family-spec.csv";
+design_table_source = "data/fired-dimension-targets.csv";
+fired_length = 18.388;
 fired_bore = 0.669;
 fired_wall = 0.130;
 shrink_x = 0.12;

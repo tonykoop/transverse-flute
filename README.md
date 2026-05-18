@@ -22,6 +22,11 @@ Sister project to [`flutes`](https://github.com/tonykoop/flutes), [`fujara`](htt
 
 ## Status and validation warning
 
+Status: `V5 explorer/build-packet candidate for review`; fabrication authority
+is limited to first-pass prototype planning tables and the local OpenSCAD body
+starter. The packet is **not build-ready as a validated instrument** and is not
+L3/L4 measured or runtime-verified.
+
 This design has **not been physically built, tuned, fired, or validated**. The dimensions are first-pass engineering targets based on open-open flute math, ceramic shrinkage assumptions, and Tony's existing flute design-table habits.
 
 Use every number in this repository as one of:
@@ -194,6 +199,9 @@ transverse-flute/
 | Shop assembly manual | drafted |
 | CAD body starter | preliminary OpenSCAD concept |
 | Manufacturing drawings | SVG review drawings only |
+| V5 family spec | added; open-open / both-ends-open assumptions explicit |
+| Visual authority register | added; generated/concept outputs are not fabrication authority |
+| MCP provenance log | present; no live MCP sessions were run for this lane |
 | Supplier pricing and availability | not checked |
 | Physical prototypes | not started |
 | Fired shrink validation | no data yet |
