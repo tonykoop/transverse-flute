@@ -107,8 +107,8 @@
     "commands": [
       "jq . capstone-manifest.json",
       "test -f explorer.html",
-      "python3 /home/tony/.codex/skills/instrument-maker/scripts/validate_acoustic_law.py family-spec.csv",
-      "python3 /home/tony/.codex/skills/instrument-maker/scripts/validate_visual_authority.py visual-output-register.csv",
+      "python3 ${CODEX_HOME:-$HOME/.codex}/skills/instrument-maker/scripts/validate_acoustic_law.py family-spec.csv",
+      "python3 ${CODEX_HOME:-$HOME/.codex}/skills/instrument-maker/scripts/validate_visual_authority.py visual-output-register.csv",
       "git diff --check"
     ]
   },
