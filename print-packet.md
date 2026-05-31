@@ -16,7 +16,7 @@ Packet folder: `/mnt/c/Users/Tony/Documents/GitHub/transverse-flute`
 | `validation.csv` | Target/measured values, tolerance, environment, result, and tuning/build action log. |
 | `supplier-rfq.md` | Supplier email/request-for-quote starter. |
 | `visual-bom-brief.md` | Art direction for an image-forward visual BOM. |
-| `wolfram-starter.wl` | Wolfram starter for physics, optimization, visualization, and validation. |
+| `transverse-flute-starter.wl` | Wolfram starter for physics, optimization, visualization, and validation. |
 | `README.md` | Project artifact. |
 | `doe-plan.md` | Project artifact. |
 | `mold-workflow.md` | Project artifact. |
@@ -331,7 +331,7 @@ Important: the visual BOM should communicate process and parts, not invent unver
 
 <div class="page-break"></div>
 
-## wolfram-starter.wl
+## transverse-flute-starter.wl
 
 Wolfram starter for physics, optimization, visualization, and validation.
 
