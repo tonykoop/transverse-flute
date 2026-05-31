@@ -1300,7 +1300,7 @@ Tony
 """,
     )
     write_text(
-        ROOT / "wolfram-starter.wl",
+        ROOT / "transverse-flute-starter.wl",
         """
 (* Slip-Cast Transverse Flute Family - Wolfram starter *)
 
