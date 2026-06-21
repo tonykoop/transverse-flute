@@ -115,5 +115,16 @@
   "notes": [
     "All paths are repository-relative for portable explorer/capstone use.",
     "The packet remains honest about open tone-hole, ceramic shrink, bore-roundness, and stopper-position assumptions."
-  ]
+  ],
+  "engineering": {
+    "wolfram": [
+      {
+        "source_file": "woodwind/transverse-flute/transverse-flute-starter.wl",
+        "cloud_path": "Musical_Instruments/woodwinds/transverse-flute/transverse-flute-starter.wl",
+        "cloud_url": "https://www.wolframcloud.com/obj/wrfcoin/Musical_Instruments/woodwinds/transverse-flute/transverse-flute-starter.wl",
+        "permission": "Public-Execute",
+        "kind": "acoustics-starter"
+      }
+    ]
+  }
 }
