@@ -1,0 +1,34 @@
+{
+  "product": "transverse-flute",
+  "pipeline": "studiopipeline:evolution-pipeline",
+  "stage": "0-intake",
+  "master_revision": "rev-A (pre-commit intake, 2026-07-01)",
+  "generated": "2026-07-01",
+  "cad_masters": [
+    {
+      "path": "cad/slip_cast_transverse_flute_body.scad",
+      "format": "openscad-source",
+      "sha256": "09559ce3695fb347a80539320d67dd08b2f200aac15d973c2522a8109cbf1eda",
+      "authority": "pending_measurement",
+      "lossy": false,
+      "notes": "Parametric body-envelope starter for the G4 prototype tube; renders clean in OpenSCAD. Not a final production mold or measured acoustic validation. Embouchure/voicing out of scope."
+    },
+    {
+      "path": "transverse-flute-starter.wl",
+      "format": "wolfram-source",
+      "sha256": "9ef40035a8bc563439af080a7d8fd96e600edcaff07dd5fbfd287ccbbccc576e",
+      "authority": "derived_preview",
+      "lossy": false,
+      "notes": "Physics starter; source-only (not executed). L2 evidence."
+    },
+    {
+      "path": "Slip-Cast-Transverse-Flute-Family.xlsx",
+      "format": "design-table",
+      "sha256": "8956d4db48cb64065a868b3e6a1f89d63ca9b68a0c0be8512c7b77fd6ee7f224",
+      "authority": "fabrication",
+      "lossy": false,
+      "notes": "Parametric workbook; current planning authority (first-pass fired targets, master scaling, tone-hole schedules, DoE). Measurement-gated until Round 1 firing."
+    }
+  ],
+  "notes": "OpenSCAD source + design workbook are the current masters; no STEP export yet (SolidWorks export is Windows-side, out of scope for this intake pass). Design is unvalidated/experimental. Gate A (Alpha workspace compile) not yet run."
+}

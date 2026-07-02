@@ -22,7 +22,9 @@ Sister project to [`flutes`](https://github.com/tonykoop/flutes), [`fujara`](htt
 
 ## Status and validation warning
 
-Status: `V5 explorer/build-packet candidate for review`; fabrication authority
+**Status:** L2 V5 build-packet candidate
+
+V5 explorer/build-packet candidate for review; fabrication authority
 is limited to first-pass prototype planning tables and the local OpenSCAD body
 starter. The packet is **not build-ready as a validated instrument** and is not
 L3/L4 measured or runtime-verified.
@@ -182,6 +184,10 @@ transverse-flute/
 |   `-- slip_cast_transverse_flute_body.scad
 |-- cnc/
 |   `-- master-fabrication-plan.md
+|-- evolution/
+|   |-- master/manifest.json
+|   |-- design-intent.md
+|   `-- revisions.md      <- Stage 0 evolution-pipeline intake (Gate A not yet run)
 `-- scripts/
     `-- generate_packet.py
 ```
@@ -202,6 +208,7 @@ transverse-flute/
 | V5 family spec | added; open-open / both-ends-open assumptions explicit |
 | Visual authority register | added; generated/concept outputs are not fabrication authority |
 | MCP provenance log | present; no live MCP sessions were run for this lane |
+| Evolution-pipeline intake | Stage 0 intake added (manifest, design-intent, revisions); Gate A not yet run |
 | Supplier pricing and availability | not checked |
 | Physical prototypes | not started |
 | Fired shrink validation | no data yet |
