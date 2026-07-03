@@ -89,3 +89,24 @@ Initial assumption is `shrink_x = shrink_y = shrink_z = 0.12`. This is a placeho
 - A removable head stopper or cork test plug is assumed for Round 1 because it gives a reversible tuning variable.
 - All prices, supplier availability, and exact clay data must be date-checked before buying.
 - CAD mold release and split lines need confirmation in the actual CAD model before cutting production molds.
+
+## Arena/Registry Readiness — Geometry Facts
+
+Consolidates the Initial Family Targets table above (SCF-G4-01, the middle
+family member) into registry-candidate form (Code-CAD Arena,
+`makerbench-hwe/tasks/code_cad_arena/registry.json`). No new claims —
+reformats existing values only. These are **fired-target** dimensions per
+the packet's own scope note, not master/mold dimensions.
+
+| Field | Value | Source |
+|---|---|---|
+| task_kind | single_part_tube (transverse embouchure flute) | Design Intent |
+| named params | bore_id_in: 0.669, od_in: 0.929, target_root: G4, acoustic_law: open_open | Initial Family Targets table (SCF-G4-01) |
+| envelope_mm | [24, 24, 429] (OD 0.929 in ≈ 24 mm; pre-trim fired length 18.388 in ≈ 467 mm — using sounding length 16.885 in ≈ 429 mm as the more conservative figure since pre-trim includes material removed before use) | Initial Family Targets table |
+| assembly | false (single cast tube; embouchure and tone holes are cut features, not separate bodies) | Design Intent |
+| min_bodies | 1 | same |
+| family variants | D4 → [26, 26, 575] mm; F4 → [24, 24, 483] mm; A4 → [21, 21, 382] mm; C5 → [19, 19, 321] mm (same OD/sounding-length conversion applied to the other 4 rows) | Initial Family Targets table |
+
+**Arena-ready**, with one caveat worth flagging: these are fired *targets*
+under a 12% placeholder shrink assumption, not measured-prototype dimensions
+— appropriate for the arena's geometry-only scope, but not a tuning claim.
